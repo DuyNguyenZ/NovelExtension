@@ -1,13 +1,30 @@
 {
-    "name": "YunaNovel",
-    "description": "Copy-paste translate novel",
+    "name": "YunaNovel_DeepLVersion",
+    "description": "Deepl automatic translate novel",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": ["storage"],
-    "action": { "default_popup": "popup.html" },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' https://api-free.deepl.com/;"
+    },
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "host_permissions": [
+        "https://api-free.deepl.com/*"
+    ],
+    "permissions": [
+      "storage",
+      "activeTab"
+    ],   
+    "action": {
+        "default_popup": "popup.html"
+    },
     "content_scripts": [
         {
-            "matches":["https://ncode.syosetu.com/*"],
+            "matches": ["https://ncode.syosetu.com/*"],
             "js": ["Content.js"]
         }
     ]
