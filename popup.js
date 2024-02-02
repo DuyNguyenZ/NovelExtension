@@ -31,7 +31,7 @@ function tranlatedMessage(message){
 async function translateNovelPage(DataNovel) {  
 
   //api key
-  const apiKey = "[3fcd8b27-c555-1d7f-6712-3061c0ec5fae]";
+  const apiKey = "[]";
   const targetLang = "EN";
   const novelData = DataNovel;
 
